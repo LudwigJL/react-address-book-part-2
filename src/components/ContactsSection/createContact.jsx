@@ -3,7 +3,7 @@ import { ContactContext } from "../../App";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function CreateContact() {
+export default function CreateContact() {
   const context = useContext(ContactContext);
   const navigate = useNavigate();
 
@@ -41,13 +41,9 @@ function CreateContact() {
 
   const insertContact = async (event) => {
     event.preventDefault();
-
-    console.log("INSERTED");
-    console.log(contactData);
-
+    
     await axios
-      .post(
-        "https://boolean-uk-api-server.fly.dev/LudwigJL/contact",
+      .post("https://boolean-uk-api-server.fly.dev/LudwigJL/contact",
         contactData
       )
       .then((res) => {
@@ -65,7 +61,6 @@ function CreateContact() {
       <section>
         <form onSubmit={insertContact}>
           <label>
-            {" "}
             First name:
             <input
               type="text"
@@ -75,7 +70,6 @@ function CreateContact() {
             />
           </label>
           <label>
-            {" "}
             Last name:
             <input
               type="text"
@@ -85,7 +79,6 @@ function CreateContact() {
             />
           </label>
           <label>
-            {" "}
             Street:
             <input
               type="text"
@@ -95,7 +88,6 @@ function CreateContact() {
             />
           </label>
           <label>
-            {" "}
             City:
             <input
               type="text"
@@ -110,5 +102,3 @@ function CreateContact() {
     </>
   );
 }
-
-export default CreateContact;

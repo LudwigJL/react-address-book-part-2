@@ -19,6 +19,7 @@ function ContactList () {
                     <img src={contact.profileImage} />
                     <p>{contact.firstName} {contact.lastName} </p>
                     <Link to={`/contacts/view/${contact.id}`}>View</Link>
+                    <Link to={`/contacts/remove/${contact.id}`}>Remove</Link>
                 </li>
             ))}
             </div>

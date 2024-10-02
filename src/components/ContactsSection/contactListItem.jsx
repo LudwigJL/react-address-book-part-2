@@ -8,13 +8,13 @@ export default function ContactListItem( ) {
     const [match, setMatch] = useState(null)
 
     const { id } = useParams()
-
+    
     useEffect(() => {
         if(context.contacts && id){
             const matchingContact = context.contacts.find((contact) => Number(contact.id) === Number(id));
             setMatch(matchingContact);
         }
-        
+
     }, [context.contacts, id])
 
     if(!match) return <p>Loading... </p>
