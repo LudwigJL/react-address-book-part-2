@@ -5,8 +5,9 @@ import { createContext } from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import axios from 'axios';
 import ContactListItem from './components/ContactsSection/contactListItem';
-import CreateContact from './components/ContactsSection/createContact';
-import RemoveContact from './components/ContactsSection/removeContact';
+import CreateContact from './components/ContactsSection/Requests/createContact';
+import RemoveContact from './components/ContactsSection/Requests/removeContact';
+import UpdateContact from './components/ContactsSection/Requests/updateContact';
 
 const ContactContext = createContext()
 
@@ -39,7 +40,8 @@ function App() {
                     <Route path='/contacts' element={<ContactsSection />}></Route> 
                     <Route path='/contacts/view/:id' element={<ContactListItem />}></Route>   
                     <Route path='/create' element={<CreateContact />}></Route>     
-                    <Route path='/contacts/remove/:id' element={<RemoveContact />}></Route>     
+                    <Route path='/contacts/remove/:id' element={<RemoveContact />}></Route>    
+                    <Route path='/contacts/update/:id' element={<UpdateContact />}></Route> 
                 </Routes>
         </ContactContext.Provider>
             </div>

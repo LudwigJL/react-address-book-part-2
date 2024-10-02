@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { ContactContext } from "../../App";
+import { ContactContext } from "../../../App";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -39,7 +39,7 @@ export default function CreateContact() {
     }
   }
 
-  const insertContact = async (event) => {
+  const postContact = async (event) => {
     event.preventDefault();
     
     await axios
@@ -59,7 +59,7 @@ export default function CreateContact() {
   return (
     <>
       <section>
-        <form onSubmit={insertContact}>
+        <form onSubmit={postContact}>
           <label>
             First name:
             <input

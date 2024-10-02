@@ -20,6 +20,7 @@ function ContactList () {
                     <p>{contact.firstName} {contact.lastName} </p>
                     <Link to={`/contacts/view/${contact.id}`}>View</Link>
                     <Link to={`/contacts/remove/${contact.id}`}>Remove</Link>
+                    <Link to={`/contacts/update/${contact.id}`}>Update</Link>
                 </li>
             ))}
             </div>

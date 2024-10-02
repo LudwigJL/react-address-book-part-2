@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { ContactContext } from "../../App";
+import { ContactContext } from "../../../App";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -7,9 +7,6 @@ export default function RemoveContact(){
     const navigate = useNavigate()
     const context = useContext(ContactContext);
     const { id } = useParams()
-    console.log('------')
-    console.log(id)
-
 
     const deletePost = async () => {
         await axios.delete(`https://boolean-uk-api-server.fly.dev/LudwigJL/contact/${id}`);}
@@ -23,3 +20,4 @@ export default function RemoveContact(){
 
         return null;
 }
+
