@@ -14,14 +14,15 @@ export default function ContactListItem( ) {
             const matchingContact = context.contacts.find((contact) => Number(contact.id) === Number(id));
             setMatch(matchingContact);
         }
+        
     }, [context.contacts, id])
 
     if(!match) return <p>Loading... </p>
   
     return (
         <>
-            <h2>{match.firstName}</h2>
-            <p>{match.street} {match.city}</p>
+            <h1>{match.firstName} {match.lastName}</h1>
+            <h3>{match.street} {match.city}</h3>
         </>
     );
 }

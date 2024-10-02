@@ -12,6 +12,8 @@ function ContactList () {
 
     return(
         <ul>
+            <div className="view-contacts">
+            
             {context.contacts.map((contact, index) => (
                 <li key={index}>
                     <img src={contact.profileImage} />
@@ -19,6 +21,8 @@ function ContactList () {
                     <Link to={`/contacts/view/${contact.id}`}>View</Link>
                 </li>
             ))}
+            </div>
+            
         </ul>
     )
 }
