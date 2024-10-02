@@ -5,7 +5,8 @@ export default function Dashboard() {
         <section>
             <h1>Menu</h1>
             <Link to={'/contacts'}> Contacts List</Link>
-            <p>Add New Contact</p>
+            <Link to={'/create'}>Create Contact</Link>
+            
         </section>
     )
 }
